@@ -2,10 +2,10 @@
 Curso APIRest DevDojo, Modelo de Estudo.
 
 Emenda Estudada.<br>
-Conteúdo do curso:
 
-| Métodos de injeção de dependência |
+| Conteúdo do curso |
 |--- |
+ Métodos de injeção de dependência
  Métodos HTTP´s 
  Docker 
  Spring Data JPA 
