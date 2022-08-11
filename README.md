@@ -1,4 +1,4 @@
-# springBoot2Essentials
+# Spring Boot 2 Essentials
 Curso APIRest DevDojo, Modelo de Estudo.
 
 Emenda Estudada.<br>
