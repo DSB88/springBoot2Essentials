@@ -41,8 +41,8 @@ public class AnimeController {
         return ResponseEntity.ok(animeService.listAllNonPageable());
     }
 
-    @GetMapping("by-test/{id}")
-    @PreAuthorize("hasRole('TEST')")
+    @GetMapping("/by-test/{id}")
+    @PreAuthorize("hasRole('VISITOR')")
     public ResponseEntity<Anime> findByIdForTesting(@PathVariable Long id) {
         return ResponseEntity.ok(animeService.findByIdOrThrowBadRequestException(id));
     }
@@ -52,13 +52,13 @@ public class AnimeController {
         return ResponseEntity.ok(animeService.findByIdOrThrowBadRequestException(id));
     }
 
-    @GetMapping("by-id/{id}")
-    @PreAuthorize("hasRole('TEST')")
-    public ResponseEntity<Anime> findByIdAuthenticationPrincipal(@PathVariable Long id,
-                                                                 @AuthenticationPrincipal UserDetails userDetails) {
-        log.info(userDetails);
-        return ResponseEntity.ok(animeService.findByIdOrThrowBadRequestException(id));
-    }
+//    @GetMapping("/bys-id/{id}")
+//    @PreAuthorize("hasRole('VISITOR')")
+//    public ResponseEntity<Anime> findByIdAuthenticationPrincipal(@PathVariable Long id,
+//                                                                 @AuthenticationPrincipal UserDetails userDetails) {
+//        log.info(userDetails);
+//        return ResponseEntity.ok(animeService.findByIdOrThrowBadRequestException(id));
+//    }
 
     @GetMapping("/find")
     public ResponseEntity<List<Anime>> findByName(@RequestParam String name) {
@@ -72,7 +72,7 @@ public class AnimeController {
         return ResponseEntity.ok(animeService.save(animePostRequestBody));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("api/v1/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         animeService.delete(id);
