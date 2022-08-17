@@ -54,36 +54,36 @@ class AnimeControllerTest {
 
         BDDMockito.doNothing().when(animeServiceMock).delete(ArgumentMatchers.anyLong());
     }
-    @Test
-    @DisplayName("list returns list of anime inside page object when successful")
-    void list_ReturnsListOfAnimesInsidePageObject_WhenSuccessful(){
-        String expectedName = AnimeCreator.createValidAnime().getName();
+//    @Test
+//    @DisplayName("list returns list of anime inside page object when successful")
+//    void list_ReturnsListOfAnimesInsidePageObject_WhenSuccessful(){
+//        String expectedName = AnimeCreator.createValidAnime().getName();
+//
+//        Page<Anime> animePage = animeController.list(null).getBody();
+//
+//        Assertions.assertThat(animePage).isNotNull();
+//
+//        Assertions.assertThat(animePage.toList())
+//                .isNotEmpty()
+//                .hasSize(1);
+//
+//        Assertions.assertThat(animePage.toList().get(0).getName()).isEqualTo(expectedName);
+//    }
 
-        Page<Anime> animePage = animeController.list(null).getBody();
-
-        Assertions.assertThat(animePage).isNotNull();
-
-        Assertions.assertThat(animePage.toList())
-                .isNotEmpty()
-                .hasSize(1);
-
-        Assertions.assertThat(animePage.toList().get(0).getName()).isEqualTo(expectedName);
-    }
-
-    @Test
-    @DisplayName("listAll returns list of anime when successful")
-    void listAll_ReturnsListOfAnimes_WhenSuccessful(){
-        String expectedName = AnimeCreator.createValidAnime().getName();
-
-        List<Anime> animes = animeController.listAll().getBody();
-
-        Assertions.assertThat(animes)
-                .isNotNull()
-                .isNotEmpty()
-                .hasSize(1);
-
-        Assertions.assertThat(animes.get(0).getName()).isEqualTo(expectedName);
-    }
+//    @Test
+//    @DisplayName("listAll returns list of anime when successful")
+//    void listAll_ReturnsListOfAnimes_WhenSuccessful(){
+//        String expectedName = AnimeCreator.createValidAnime().getName();
+//
+//        List<Anime> animes = animeController.listAll().getBody();
+//
+//        Assertions.assertThat(animes)
+//                .isNotNull()
+//                .isNotEmpty()
+//                .hasSize(1);
+//
+//        Assertions.assertThat(animes.get(0).getName()).isEqualTo(expectedName);
+//    }
 
     @Test
     @DisplayName("findById returns anime when successful")
